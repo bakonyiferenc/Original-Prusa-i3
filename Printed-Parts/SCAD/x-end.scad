@@ -25,9 +25,10 @@ module x_end_base()
     difference()
     {
         translate(v=[0,-17,13]) poly_cylinder(h = 3, r=12.5, $fn=25);
-        translate(v=[8,-17,12]) rotate([0,0,0]) cube(size = [15,50,10], center = true);
-        translate(v=[8,-24,12]) rotate([0,0,0]) cube(size = [50,15,10], center = true);
-        translate(v=[0,-17, -1]) cylinder(h = 20, r = 6.7, $fn = 60);
+        //translate(v=[8,-17,12]) rotate([0,0,0]) cube(size = [15,50,10], center = true);
+        //translate(v=[8,-24,12]) rotate([0,0,0]) cube(size = [50,15,10], center = true);
+        translate(v=[8,-24,12]) rotate([0,0,45]) cube(size = [50,24.5,10], center = true);
+        translate(v=[0,-17, -1]) cylinder(h = 20, r = 5.2, $fn = 60);
     }
     
     
@@ -72,28 +73,28 @@ module x_end_holes()
 // TR Nut trap
    // Hole for the nut
     //#translate(v=[0,-17, -1]) poly_cylinder(h = 9.01, r = 6.7, $fn = 60);
-    translate(v=[0,-17, -1]) cylinder(h = 14.51, r = 6.7, $fn = 60);
-    translate(v=[0,-17, -0.1]) cylinder(h = 1, r1 = 7.2,r2 = 6.7, $fn = 60);
+    translate(v=[0,-17, -1]) cylinder(h = 14.51, r = 5.2, $fn = 60);
+    //translate(v=[0,-17, -0.1]) cylinder(h = 1, r1 = 6.7,r2 = 5.2, $fn = 60);
 
 // Screw holes for TR nut
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, -4]) cylinder(h = 19, r = 1.65, $fn=50);
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -9.5, -4]) cylinder(h = 19, r = 1.65, $fn=50);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 8, -4]) cylinder(h = 19, r = 1.65, $fn=50);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, -8, -4]) cylinder(h = 19, r = 1.65, $fn=50);
 
-    translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65, $fn=50);
-    translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,-9.5,-1]) cylinder(h=2, r1=2.2,r2=1.65,, $fn=50);
+    //translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,8,-1]) cylinder(h=2, r1=2.2,r2=1.65, $fn=50);
+    //translate(v=[0,-17,0]) rotate([0,0,-135]) translate([0,-8,-1]) cylinder(h=2, r1=2.2,r2=1.65, $fn=50);
 
 
 // Nut traps for TR nut screws
-    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 9.5, 11]) rotate([0, 0, 0])cylinder(h = 6, r = 3.15, $fn=6);
+    translate(v=[0,-17, 0]) rotate([0, 0, -135]) translate([0, 8, 11]) rotate([0, 0, 0])cylinder(h = 6, r = 3.15, $fn=6);
 
-    translate(v=[0,-17, 0]) rotate([0,0,-135]) translate([0,-9.5,10]) rotate([0,0,30])cylinder(h = 3, r = 3.1, $fn=6);
-    translate([-5.5,-17.2,10]) rotate([0,0,30]) cube([5,5,3]);
-    translate([-0,-17.2,10]) rotate([0,0,60]) cube([5,10,3]);
+    translate(v=[0,-17, 0]) rotate([0,0,-135]) translate([0,-8,10]) rotate([0,0,30])cylinder(h = 3, r = 3.1, $fn=6);
+    translate([-5,-17.2,10]) rotate([0,0,30]) cube([5,5,3]);
+    translate([-0.2,-17.2,10]) rotate([0,0,60]) cube([5,7,3]);
     
     translate([0,0,6.5])
     difference()
     {
-        translate(v=[0,-17, 0]) rotate([0,0,-135]) translate([0,-9.5,5.8]) rotate([0,0,30])cylinder(h = 1, r = 3.1, $fn=6);
+        translate(v=[0,-17, 0]) rotate([0,0,-135]) translate([0,-8,5.8]) rotate([0,0,30])cylinder(h = 1, r = 3.1, $fn=6);
         translate([-11,-12.0,4.5]) rotate([0,0,45]) cube([8,3,3]);
         translate([-6.5,-16.85,4.5]) rotate([0,0,45]) cube([8,3,3]);
     }
@@ -116,7 +117,7 @@ module x_end_plain()
     }
     difference()
     {
-        translate(v=[0,-17, 0.3]) rotate([0,0,-135]) translate([0,-9.5,10]) rotate([0,0,30])cylinder(h = 3, r = 3.2, $fn=6);
+        translate(v=[0,-17, 0.3]) rotate([0,0,-135]) translate([0,-8,10]) rotate([0,0,30])cylinder(h = 3, r = 3.2, $fn=6);
         translate(v=[-5.8,-13.3,13.5]) rotate([0,0,45.3]) cube(size = [10,2,1], center = true);
     }
     }

@@ -91,11 +91,13 @@ module x_end_idler_base()
         translate(v=[0,-15.5,30.25]) rotate(a=[0,-90,0]) cylinder(h = 80, r=1.55, $fn=30);
     }
 
-		// nut trap print supoorts
-    translate(v=[-5.8,-13.149,13.5]) rotate([0,0,45]) cube(size = [10,2.1,1], center = true);
-    translate(v=[-9.8,-11,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
-    translate(v=[-5.2,-8,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
-    translate(v=[-8.8,-8.55,13.5]) rotate([0,0,45]) cube(size = [8,2.1,1], center = true);
+	// nut trap print supports
+    translate([1, -1, -0.2]) {
+        translate(v=[-5.8,-13.149+0.4/2+0.4,13.5]) rotate([0,0,45]) cube(size = [10,2.1-0.4,1.2], center = true);
+        translate(v=[-9.8+0.4,-11,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
+        translate(v=[-5.2-0.4,-8,13.7]) rotate([0,0,135]) cube(size = [8,2.1,0.4], center = true);
+        translate(v=[-8.8,-8.55,13.5]) rotate([0,0,45]) cube(size = [8,2.1,1], center = true);
+    }
 
 }
 
