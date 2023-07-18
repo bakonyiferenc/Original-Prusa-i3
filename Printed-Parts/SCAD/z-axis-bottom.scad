@@ -5,6 +5,8 @@
 // http://www.reprap.org/wiki/Prusa_Mendel
 // http://prusamendel.org
 
+frame_correction = 1;
+
 module z_bottom_base()
 {
      translate([0,-1.5,0]) cube([7.5,49,16+20]); // plate touching the base
@@ -41,15 +43,15 @@ module z_bottom_fancy()
 module z_bottom_holes()
 {
     // Frame mounting screw holes
-    translate([-1,10,12]) rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=50);
-    translate([-1,10+20,12]) rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=50);
-    translate([-1,10+10,32]) rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=50);
+    translate([-1,10+frame_correction,12]) rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=50);
+    translate([-1,10+20+frame_correction,12]) rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=50);
+    translate([-1,10+10+frame_correction,32]) rotate([0,90,0]) cylinder(h = 20, r=1.6, $fn=50);
 
     // Frame mounting screw head holes
-    translate([4,10,12]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
-    translate([4,10+20,12]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
-    translate([4,10+10,32]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
-    translate([4,10+10-3.1,10+20+2]) cube([10,6.2,10]);
+    translate([4,10+frame_correction,12]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
+    translate([4,10+20+frame_correction,12]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
+    translate([4,10+10+frame_correction,32]) rotate([0,90,0]) cylinder(h = 20, r=3.1, $fn=30);
+    translate([4,10+10-3.1+frame_correction,10+20+2]) cube([10,6.2,10]);
     translate([4,10,38]) rotate([0,45,0]) cube([10,20,10]);
 
     // Z rod holder
@@ -159,8 +161,8 @@ module z_bottom_left()
 
 
  
-z_bottom_right();
-z_bottom_left();
+rotate([0, 0, 90]) z_bottom_right();
+translate([13,-5,0]) rotate([0, 0, -90]) z_bottom_left();
  
 
 
